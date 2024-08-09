@@ -8,13 +8,31 @@ import { ScriptService } from '../services/script.service';
 })
 export class LandingComponent {
 
+  planes: string[] = [
+    'innistrad',
+    'ixalan',
+    'ravnica'
+  ]
+
+  elementoPresionado: number = -1;
+
+  
   constructor(
     private scriptService: ScriptService
-  ){}
+    ) { }
 
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.scriptService.loadScript(['landing'])
+    this.selectPlane(0)
+    
+  }
+
+  // Función para manejar el clic en un elemento
+  selectPlane(index: number) {
+    // Almacena el índice del elemento presionado
+    this.elementoPresionado = index;
+  }
+
+  showGallery(){
+    this.elementoPresionado = -1;
   }
 }

@@ -1,7 +1,7 @@
 document.getElementById('enter').onclick = function () { enterPage() };
 
-document.getElementById('backButton').onclick = function () { seePlanes() };
-
+/* document.getElementById('backButton').onclick = function () { seePlanes() };
+ */
 mainPlane = document.getElementById('mainPlane')
 
 cover = document.getElementById('preview')
